@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <!-- HERO SECTION -->
@@ -33,14 +34,16 @@
     <div class="container">
       <h2 class="text-center mb-4">All categories</h2>
       <div class="row g-5">
-        {% for _ in dummy_range %}
+        {% for category in category_list %}
         <div class="col-12  col-md-6 col-lg-4">
           <div class="card" data-aos="zoom-in">
-            <img src="{%  static 'img/cat1.jpg' %}" alt="" height="250px">
+            <div class="card-img">
+              <img src="{%  static 'img/cat1.jpg' %}" alt="" height="250px" width="100%">
+            </div>
             <div class="card-body text-center">
-              <h5>Expansion Joint Profiles</h5>
-              <p class="text-secondary">Expansion Joint Profiles</p>
-              <Button class="btn btn-light">Detail</Button>
+              <h5>{{category.name}}</h5>
+              <p class="text-secondary">{{category.description}}</p>
+              
             </div>
           </div>
         </div>

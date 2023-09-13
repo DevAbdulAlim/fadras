@@ -14,9 +14,9 @@ class ProductListView(View):
         # Determine which columns to select based on language
         name_column = F('name_en')
         description_column = F('description_en')
-        if user_language == 'bn':
-           name_column = F('name_bn')
-           description_column = F('name_bn')
+        if user_language == 'ar':
+           name_column = F('name_ar')
+           description_column = F('description_ar')
 
         # Fetch products with appropriate columns based on language
         products = Product.objects.annotate(

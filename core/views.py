@@ -1,18 +1,44 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.views import View
+from product.models import Category
+from django.utils.translation import activate
+from django.db.models import F
 
 # Create your views here.
 class HomePageView(View):
     def get(self, request):
-        dummy_range = range(6)
-        return render(request, 'core/index.html', {"dummy_range": dummy_range})
+        # Get user's selected language
+        user_language = request.session.get('django_language', settings.LANGUAGE_CODE)
+       
+
+
+        # Determine which columns to select based on language
+        name_column = F('name_en')
+        description_column = F('description_en')
+        if user_language == 'ar':
+            name_column = F('name_ar')
+            description_column = F('description_ar')
+       
+
+
+        # Fetch categories with appropriate columns based on language
+      
+        category_list = Category.objects.annotate(
+            name=name_column,
+            description=description_column
+        ).values('name', 'description', 'image')
+
+        # Set ther selected language for this view
+        activate(user_language)
+
+        return render(request, 'core/index.html', {"category_list": category_list})
 
 def set_language(request):
     language = request.GET.get('language')
 
     # Validate the language parameter
-    if language in ['en', 'bn']:
+    if language in ['en', 'ar']:
         # Set the language in the session or cookie
         request.session['django_language'] = language
 
