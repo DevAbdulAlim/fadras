@@ -34,6 +34,14 @@ class HomePageView(View):
 
         return render(request, 'core/index.html', {"category_list": category_list})
 
+class ProjectPageView(View):
+    def get(self, request):
+        dummy_data = list(range(6))
+        return render(request, 'core/projects.html', {"project_list": dummy_data})
+
+
+
+
 def set_language(request):
     language = request.GET.get('language')
 

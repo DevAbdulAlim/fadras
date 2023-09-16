@@ -1,0 +1,48 @@
+#projects .title {
+    text-align: center;
+    padding: 8rem 0;
+    background-color: #1bad99;
+    color: white;
+}
+
+#projects .row {
+    padding: 6rem 0;
+}
+
+
+#projects .card {
+    position: relative;
+    overflow: hidden;
+}
+#projects .card-body{
+    position: absolute;
+    bottom: 0;
+    display: none;
+    color: white;
+}
+
+#projects .bg-shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #131d30;
+    display: none;
+}
+
+#projects .card-img {
+    transition: all 0.8s;
+}
+
+#projects .card:hover .card-body {
+    display: block;
+}
+
+#projects .card:hover .card-img {
+    transform: scale(1.1);
+}
+
+#projects .card:hover .bg-shadow {
+
+    display: block;
+    opacity: 0.7;
+}
