@@ -32,7 +32,15 @@ class HomePageView(View):
         # Set ther selected language for this view
         activate(user_language)
 
-        return render(request, 'core/index.html', {"category_list": category_list})
+        # ! markets
+        market_list = list(range(6))
+
+
+        # ! Clients
+        client_list = list(range(12))
+
+
+        return render(request, 'core/index.html', {"category_list": category_list, "market_list": market_list, "client_list": client_list })
 
 class ProjectPageView(View):
     def get(self, request):
