@@ -27,3 +27,7 @@ class ProductListView(View):
         activate(user_language)
 
         return render(request, 'product/products.html', {'products': products})
+    
+class ProductDetailsView(View):
+    def get(self, request, product_id):
+        return render(request, 'product/product.html', {})

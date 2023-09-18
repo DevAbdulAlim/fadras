@@ -32,15 +32,20 @@ class HomePageView(View):
         # Set ther selected language for this view
         activate(user_language)
 
-        # ! markets
+        # ? markets
         market_list = list(range(6))
 
 
-        # ! Clients
+        # ? Clients
         client_list = list(range(12))
 
 
         return render(request, 'core/index.html', {"category_list": category_list, "market_list": market_list, "client_list": client_list })
+    
+
+class AboutPageView(View):
+    def get(self, request):
+        return render(request, 'core/about.html', {})
 
 class ProjectPageView(View):
     def get(self, request):
@@ -48,8 +53,13 @@ class ProjectPageView(View):
         return render(request, 'core/projects.html', {"project_list": dummy_data})
 
 
+class ContactPageView(View):
+    def get(self, request):
+        return render(request, 'core/contact.html', )
 
 
+
+# ! language changer
 def set_language(request):
     language = request.GET.get('language')
 

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_css%}
+<link rel="stylesheet" href="{% static 'product/css/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- MAIN CONTENT -->
+<section id="product" class="py-5">
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <img src="https://www.inprocorp.com/globalassets/product-images/expansion-joint-systems/floor-covers/432-series-floor-recessed-mount.jpg?width=500&height=500&mode=crop" alt="">
+        </div>
+        <div class="col-12 col-md-6">
+            <h1>432 Series - Recessed Mount
+            </h1>
+            <p class="text-body">The 432 floor expansion joint cover accommodates horizontal, vertical and shear seismic movement. Ideal system for use with carpet, vinyl, ceramic tile and other floor finishes. The 432 is engineered with exposed hardware which provides simple accessibility for joint maintenance and inspection.</p>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}

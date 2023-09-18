@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_css%}
+<link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- MAIN CONTENT -->
+<section id="contact" class="py-5">
+    <img src="{% static 'img/contact.png' %}" height="400px" width="100%" alt="">
+    <div class="container">
+                    <div class="contact-info py-5">
+                        <h1>Contact Information</h1>
+                        <table class="table table-bordered">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th colspan="2">Head Office</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Address</th>
+                                    <td>
+                                        Atatürk Sanayi Bölgesi Ömerli Mh. Hakkı İleri Cd. Gülce Sk.
+                                        No:22<br />34555 Hadımköy / İSTANBUL
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Phone</th>
+                                    <td>+90 (212) 485 16 15</td>
+                                </tr>
+                                <tr>
+                                    <th>Fax</th>
+                                    <td>+90 (212) 771 25 79</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><a href="mailto:arfen@arfen.com">arfen@arfen.com</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="contact-form py-5">
+                        <h1>Contact Us</h1>
+                        <form>
+                            <div class="row g-4">
+                                <div class="col-12 col-md-4"><div class="mb-3">
+                                    <label for="fullName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="John Doe" required>
+                                </div></div>
+                                <div class="col-12 col-md-4"><div class="mb-3">
+                                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phoneNumber" placeholder="123-456-7890" required>
+                                </div></div>
+                                <div class="col-12 col-md-4"> <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="johndoe@example.com" required>
+                                </div></div>
+                                <div class="col-12 col-md-12"> 
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="5" placeholder="Your message here" required></textarea>
+                                    </div></div>
+                            </div>
+                            
+                            
+                          
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                    <br>
+
+                    <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1812.6966965664355!2d46.776744!3d24.679000000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f07450784fb1d%3A0xd3afa3b08a8db44a!2sFirst%20Medical%20Laboratory!5e0!3m2!1sen!2sus!4v1695039716648!5m2!1sen!2sus"
+            width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+               
+                  
+      
+
+        
+    </div>
+</section>
+{% endblock %}
