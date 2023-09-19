@@ -1,13 +1,19 @@
 from django.db import models
+import os
 
 # Create your models here.
+
+def image_upload_path(instance, filename):
+    # 'instance' is the Category instance, 'filename' is the original filename
+    return os.path.join('images/categories', filename)
 
 class Category(models.Model):
     name_en = models.CharField(max_length=255, verbose_name='Name (English)')
     name_ar = models.CharField(max_length=255, verbose_name='Name (Arabic)')
     description_en = models.TextField(verbose_name='Description (English)')
     description_ar = models.TextField(verbose_name='Description (Arabic)')
-    image = models.ImageField(upload_to='images/categories', blank=True, null=True)
+    # image = models.ImageField(upload_to='images/categories', blank=True, null=True)
+    image = models.ImageField(upload_to=image_upload_path, blank=True, null=True)
 
     def __str__(self):
         return self.name_en

@@ -15,16 +15,16 @@
       <h1 class="title">Projects</h1>
       <div class="container">
         <div class="row g-5">
-          {% for category in project_list %}
+          {% for item in project_list %}
           <div class="col-12  col-md-6 col-lg-4">
             <div class="card" data-aos="zoom-in">
               <div class="card-img">
-                <img src="{%  static 'img/cat1.jpg' %}" alt="" height="250px" width="100%">
+                <img src="{{ item.image.url }}" alt="" height="250px" width="100%">
               </div>
               <div class="bg-shadow"></div>
               <div class="card-body">
-                <h5>Audi</h5>
-                <p>Saudi Arabia - Riyadh</p>
+                <h5>{{ item.title }}</h5>
+                <p>{{ item.address }}</p>
                 
                 
               </div>

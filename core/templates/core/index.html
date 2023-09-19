@@ -52,54 +52,21 @@
    <!-- Swiper -->
    <div class="swiper mySwiper">
     <div class="swiper-wrapper py-5">
-      <!-- {% for item in category_list %}
-      <div class="swiper-slide">
-        <img src="{% static 'img/cat1.jpg' %s}" alt="">
-    <h5>{{item.name_en}}</h5>
+
+
+      {% for item in category_list %}
+      <div class="swiper-slide d-block">
+        <h5>{{ item.name }}</h5>
+        <img
+        src="{{ MEDIA_URL }}{{ item.image }}"
+        height="120"
+        width="120"
+        alt="categories"
+      />
+        <a href="">See Products</a>
       </div>
-      {% endfor %} -->
+      {% endfor %}
  
-      <div class="swiper-slide d-block">
-        <h5>Category Title</h5>
-        <img src="{% static 'img/cat1.jpg' %}" alt="">
-        <a href="">See Products</a>
-      </div>
-
-      <div class="swiper-slide d-block">
-        <h5>Category Title</h5>
-        <img src="{% static 'img/cat1.jpg' %}" alt="">
-        <a href="">See Products</a>
-      </div>
-
-
-      <div class="swiper-slide d-block">
-        <h5>Category Title</h5>
-        <img src="{% static 'img/cat1.jpg' %}" alt="">
-        <a href="">See Products</a>
-      </div>
-
-
-      <div class="swiper-slide d-block">
-        <h5>Category Title</h5>
-        <img src="{% static 'img/cat1.jpg' %}" alt="">
-        <a href="">See Products</a>
-      </div>
-
-
-      <div class="swiper-slide d-block">
-        <h5>Category Title</h5>
-        <img src="{% static 'img/cat1.jpg' %}" alt="">
-        <a href="">See Products</a>
-      </div>
-
-
-      <div class="swiper-slide d-block">
-        <h5>Category Title</h5>
-        <img src="{% static 'img/cat1.jpg' %}" alt="">
-        <a href="">See Products</a>
-      </div>
-
-      
  
       
     </div>
@@ -181,7 +148,7 @@
         class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center align-items-center"
       >
         <img
-          src="{% static 'img/client1.webp' %}"
+          src="{{ item.image.url }}"
           height="120"
           width="120"
           alt="client"

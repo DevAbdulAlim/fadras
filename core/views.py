@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.views import View
 from product.models import Category
+from core.models import Client, Project
 from django.utils.translation import activate
 from django.db.models import F
 
@@ -23,11 +24,14 @@ class HomePageView(View):
 
 
         # Fetch categories with appropriate columns based on language
+
+
       
         category_list = Category.objects.annotate(
             name=name_column,
             description=description_column
-        ).values('name', 'description', 'image')
+        ).values('name', 'description', 'image',)
+        
 
         # Set ther selected language for this view
         activate(user_language)
@@ -37,10 +41,10 @@ class HomePageView(View):
 
 
         # ? Clients
-        client_list = list(range(12))
+        client_list = Client.objects.all()
 
 
-        return render(request, 'core/index.html', {"category_list": category_list, "market_list": market_list, "client_list": client_list })
+        return render(request, 'core/index.html', {"category_list": category_list, "market_list": market_list, "client_list": client_list, "MEDIA_URL":  settings.MEDIA_URL})
     
 
 class AboutPageView(View):
@@ -49,8 +53,8 @@ class AboutPageView(View):
 
 class ProjectPageView(View):
     def get(self, request):
-        dummy_data = list(range(6))
-        return render(request, 'core/projects.html', {"project_list": dummy_data})
+        project_list = Project.objects.all()
+        return render(request, 'core/projects.html', {"project_list": project_list})
 
 
 class ContactPageView(View):
