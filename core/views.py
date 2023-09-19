@@ -33,7 +33,7 @@ class HomePageView(View):
         activate(user_language)
 
         # ? markets
-        market_list = list(range(6))
+        market_list = list(range(5))
 
 
         # ? Clients

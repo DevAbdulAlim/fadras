@@ -51,7 +51,7 @@
     <h2 class="text-center mb-4">All categories</h2>
    <!-- Swiper -->
    <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper py-5">
       <!-- {% for item in category_list %}
       <div class="swiper-slide">
         <img src="{% static 'img/cat1.jpg' %s}" alt="">
@@ -59,34 +59,47 @@
       </div>
       {% endfor %} -->
  
-      <div class="swiper-slide">
+      <div class="swiper-slide d-block">
+        <h5>Category Title</h5>
         <img src="{% static 'img/cat1.jpg' %}" alt="">
-    <h5>Category Title</h5>
+        <a href="">See Products</a>
       </div>
 
-      <div class="swiper-slide">
+      <div class="swiper-slide d-block">
+        <h5>Category Title</h5>
         <img src="{% static 'img/cat1.jpg' %}" alt="">
-    <h5>Category Title</h5>
-      </div>
-
-
-      <div class="swiper-slide">
-        <img src="{% static 'img/cat1.jpg' %}" alt="">
-    <h5>Category Title</h5>
+        <a href="">See Products</a>
       </div>
 
 
-
-      <div class="swiper-slide">
+      <div class="swiper-slide d-block">
+        <h5>Category Title</h5>
         <img src="{% static 'img/cat1.jpg' %}" alt="">
-    <h5>Category Title</h5>
+        <a href="">See Products</a>
       </div>
 
 
-        <div class="swiper-slide">
+      <div class="swiper-slide d-block">
+        <h5>Category Title</h5>
         <img src="{% static 'img/cat1.jpg' %}" alt="">
-    <h5>Category Title</h5>
+        <a href="">See Products</a>
       </div>
+
+
+      <div class="swiper-slide d-block">
+        <h5>Category Title</h5>
+        <img src="{% static 'img/cat1.jpg' %}" alt="">
+        <a href="">See Products</a>
+      </div>
+
+
+      <div class="swiper-slide d-block">
+        <h5>Category Title</h5>
+        <img src="{% static 'img/cat1.jpg' %}" alt="">
+        <a href="">See Products</a>
+      </div>
+
+      
  
       
     </div>
@@ -96,10 +109,37 @@
 </section>
 
 <!-- Solution -->
-<section id="solution" class="py-5">
+<section id="solution">
   <div class="container position-relative">
-    <img src="{% static 'img/about.jpeg' %}" height="65%" width="70%" alt="" />
-    <div class="content"></div>
+    <img src="{% static 'img/about.jpeg' %}" height="700px" width="70%" alt="" />
+    <div class="content p-5 text-light">
+      <h3>Selection Criteria for Expansian Joint Solutions</h3>
+      <p>When designing the building, there are three main types of movement to consider: thermal, seismic and wind sway</p>
+      <div class="d-flex">
+        <div class="icon"><i class="bi bi-bank"></i></div>
+        <div>
+          <h5>Thermal</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+        </div>
+      </div>
+
+      <div class="d-flex">
+        <div class="icon"><i class="bi bi-bank"></i></div>
+        <div>
+          <h5>Thermal</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+        </div>
+      </div>
+
+
+      <div class="d-flex">
+        <div class="icon"><i class="bi bi-bank"></i></div>
+        <div>
+          <h5>Thermal</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -108,15 +148,18 @@
 <section id="markets" class="bg-light py-5">
   <div class="container">
     <h2 class="text-center pb-5">Our Market Sectors</h2>
-    <div class="row g-5">
+    <div class="row g-5 justify-content-center">
       {% for item in market_list %}
       <div
-        class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex flex-column justify-content-center align-items-center"
+        class="col-6 col-sm-4 col-md-3 col-lg-2 "
       >
+      <div class="card d-flex flex-column justify-content-center align-items-center">
         <span class="d-block"
-          ><i class="bi bi-buildings" style="font-size: 3rem"></i
-        ></span>
-        <h5 class="text-center py-3">Commercial Buildings</h5>
+        ><i class="bi bi-buildings" style="font-size: 3rem"></i
+      ></span>
+      <h5 class="text-center py-3">Commercial Buildings</h5>
+      </div>
+       
       </div>
       {% endfor %}
     </div>
