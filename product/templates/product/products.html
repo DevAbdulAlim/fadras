@@ -7,20 +7,36 @@
 
 <section id="products" class="py-5">
     <div class="container">
-        <div class="row">
-            {% for product in products %}
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{product.name}}</h5>
-                        <p class="card-text">{{product.description}}</p>
-                        <p>{{product.price}}</p>
-                        <a href="" class="btn btn-primary">{% translate "Button" %}</a>
+        <div class="row g-4">
+            <div class="col-12 col-md-3">
+                <ul class="nav nav-pills flex-column">
+                    {% for item in sub_category_list %}
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="{% url 'filter_product' category_id=item.category_id sub_category_id=item.id %}">{{ item.name_en }}</a>
+                    </li>
+
+                    {% endfor %}
+                   
+                  </ul>
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="row g-4">
+                    {% for product in product_list %}
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">{{product.description}}</p>
+                                <p>{{product.price}}</p>
+                                <a href="{% url 'product' product_id=product.id %}" class="btn btn-primary">{% translate "Button" %}</a>
+                            </div>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
         </div>
+        
     </div>
 </section>
 

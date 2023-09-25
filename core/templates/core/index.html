@@ -16,13 +16,49 @@
       data-bs-slide-to="1"
       aria-label="Slide 2"
     ></button>
+    <button
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide-to="2"
+    aria-label="Slide 3"
+  ></button>
+  <button
+  type="button"
+  data-bs-target="#carouselExampleIndicators"
+  data-bs-slide-to="3"
+  aria-label="Slide 4"
+></button>
+  <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="4"
+      aria-label="Slide 5"
+    ></button>
+    <button
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide-to="5"
+    aria-label="Slide 6"
+  ></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{% static 'img/1t.jpg' %}" class="d-block w-100" alt="..." />
+      <img src="{% static 'img/h1.png' %}" class="d-block w-100" alt="..." />
     </div>
     <div class="carousel-item">
-      <img src="{% static 'img/2t.jpg' %}" class="d-block w-100" alt="..." />
+      <img src="{% static 'img/h2.png' %}" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/h3.png' %}" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/h4.png' %}" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/h5.png' %}" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/h6.png' %}" class="d-block w-100" alt="..." />
     </div>
   </div>
   <button
@@ -59,8 +95,8 @@
         <h5>{{ item.name }}</h5>
         <img
         src="{{ MEDIA_URL }}{{ item.image }}"
-        height="120"
-        width="120"
+        height="150px"
+        width="100%"
         alt="categories"
       />
         <a href="">See Products</a>

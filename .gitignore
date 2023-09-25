@@ -9,7 +9,6 @@ env/
 
 # Ignore database files
 *.sqlite3
-db.sqlite3
 
 # Ignore local development settings
 *.env
