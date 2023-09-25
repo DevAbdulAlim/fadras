@@ -12,42 +12,55 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6">
-            <img src="https://www.inprocorp.com/globalassets/product-images/expansion-joint-systems/floor-covers/432-series-floor-recessed-mount.jpg?width=500&height=500&mode=crop" alt="">
+            <img src="{{product.image1.url}}" alt="" width="100%">
         </div>
         <div class="col-12 col-md-6">
-            <h1>432 Series - Recessed Mount
+            <h1>{{product.name}}
             </h1>
-            <p class="text-body">The 432 floor expansion joint cover accommodates horizontal, vertical and shear seismic movement. Ideal system for use with carpet, vinyl, ceramic tile and other floor finishes. The 432 is engineered with exposed hardware which provides simple accessibility for joint maintenance and inspection.</p>
+            <p class="text-body">{{product.description}}</p>
         </div>
     </div>
     
 
     <!-- Information -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
+      {% for custom_property in custom_property_list %}
+
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+          <button class="nav-link{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab" data-bs-toggle="tab" data-bs-target="#{{custom_property.title|lower}}-tab-pane" type="button" role="tab" aria-controls="{{custom_property.title|lower}}-tab-pane" aria-selected="{% if forloop.first %} true{% endif %}">{{ custom_property.title }}</button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
-        </li>
+
+        {% endfor %}
       </ul>
+
+      
+
+
+      {% for custom_property in custom_property_list %}
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="tab-pane fade show{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab-pane" role="tabpanel" aria-labelledby="{{custom_property.title|lower}}-tab" tabindex="0">
             <div class="row">
-                <div class="col-12 col-md-6">
-                    Master Specification - JointMaster
-                </div>
-                <div class="col-12 col-md-6">
-                    PDF
-                </div>
-            </div>
+              {% with custom_property_data=custom_property.data %}
+              {% for item in custom_property_data.items  %}
+              <div class="col-12 col-md-6">
+                  {{ item.name }}
+              </div>
+              <div class="col-12 col-md-6">
+                {% for file in item.files %}
+                <a href="{{ file.file_path }}" target="_blank">{{ file.file_type }}</a>
+                {% endfor %}
+              </div>
+              {% endfor %}
+              {% endwith %}
+          </div>
         </div>
-        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
       </div>
+      {% endfor %}
+
+      
+
+
+
 </div>
 </section>
 {% endblock %}

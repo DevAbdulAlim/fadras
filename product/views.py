@@ -93,7 +93,27 @@ class ProductFilterView(View):
 
 class ProductDetailsView(View):
     def get(self, request, product_id):
+       # Get user's selected language
+        user_language = request.session.get('django_language', settings.LANGUAGE_CODE)
+
+        # Determine which columns to select based on language
+        name_column = 'name_en'
+        description_column = 'description_en'
+        if user_language == 'ar':
+            name_column = 'name_ar'
+            description_column = 'description_ar'
+
+        # Fetch Product
         product = get_object_or_404(Product, pk=product_id)
-        custom_property = get_object_or_404(ProductDetails, pk=1)
-        custom_property_data = custom_property.data
-        return render(request, 'product/product.html', {"product": product, "custom_property": custom_property_data})
+
+        # Assign translated fields based on the user's language
+        product.name = getattr(product, name_column)
+        product.description = getattr(product, description_column)
+        
+        # Fetch all custom properties
+        custom_property_list = ProductDetails.objects.filter(product=product_id)
+
+
+        # Set the selected language for this view
+        activate(user_language)
+        return render(request, 'product/product.html', {"product": product, "custom_property_list": custom_property_list})
