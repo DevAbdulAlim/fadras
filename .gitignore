@@ -17,7 +17,7 @@ local_settings.py
 
 # Ignore static and media files (usually served by web server)
 /static/
-/media/
+
 
 # Ignore user-uploaded media files (if using MEDIA_ROOT)
 # Uncomment the line below if you have sensitive media files you want to ignore
