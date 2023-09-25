@@ -47,7 +47,7 @@ class ProductListView(View):
         product_list = Product.objects.filter(sub_category__category=category_id).annotate(
             name=name_column,
             description = description_column
-        ).values('id', 'name', 'description', 'price')
+        )
 
         # Fetch Sub Categories
         sub_category_list = SubCategory.objects.filter(category_id=category_id)
