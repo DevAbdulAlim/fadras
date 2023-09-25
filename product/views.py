@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from .models import Category,SubCategory, Product, CustomProperty
+from .models import Category,SubCategory, Product, ProductDetails
 from django.utils.translation import activate
 from django.conf import settings
 from django.db.models import F
@@ -94,5 +94,6 @@ class ProductFilterView(View):
 class ProductDetailsView(View):
     def get(self, request, product_id):
         product = get_object_or_404(Product, pk=product_id)
-        custom_property = get_object_or_404(CustomProperty, pk=1)
-        return render(request, 'product/product.html', {"product": product, "custom_property": custom_property})
+        custom_property = get_object_or_404(ProductDetails, pk=1)
+        custom_property_data = custom_property.data
+        return render(request, 'product/product.html', {"product": product, "custom_property": custom_property_data})

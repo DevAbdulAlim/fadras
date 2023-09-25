@@ -151,22 +151,10 @@ class Product(models.Model):
         return self.name_en
     
 
-class CustomProperty(models.Model):
-    name = models.CharField(max_length=255)
-    value = models.JSONField()
+class ProductDetails(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    data = models.JSONField()
 
     def __str__(self):
-        return self.name
-
-class ProductDetails(models.Model):
-    # Your other fields here
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    custom_properties = models.ManyToManyField(CustomProperty, blank=True)
-
-    def add_custom_property(self, name, value):
-        custom_property, created = CustomProperty.objects.get_or_create(name=name, defaults={'value': value})
-        if not created:
-            custom_property.value = value
-            custom_property.save
-
-        self.custom_properties.add(custom_property)
+        return self.title
