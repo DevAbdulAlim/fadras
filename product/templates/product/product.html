@@ -24,39 +24,42 @@
 
     <!-- Information -->
     <h1>Specifications + Documents</h1>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      {% for custom_property in custom_property_list %}
-
-        <li class="nav-item" role="presentation">
-          <button class="nav-link{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab" data-bs-toggle="tab" data-bs-target="#{{custom_property.title|lower}}-tab-pane" type="button" role="tab" aria-controls="{{custom_property.title|lower}}-tab-pane" aria-selected="{% if forloop.first %} true{% endif %}">{{ custom_property.title }}</button>
-        </li>
-
-        {% endfor %}
-      </ul>
-
-      
-
-
-      {% for custom_property in custom_property_list %}
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab-pane" role="tabpanel" aria-labelledby="{{custom_property.title|lower}}-tab" tabindex="0">
-            <div class="row">
-              {% with custom_property_data=custom_property.data %}
-              {% for item in custom_property_data.items  %}
-              <div class="col-12 col-md-6">
-                  {{ item.name }}
-              </div>
-              <div class="col-12 col-md-6">
-                {% for file in item.files %}
-                <a href="{{ file.file_path }}" target="_blank">{{ file.file_type }}</a>
+    <div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        {% for custom_property in custom_property_list %}
+  
+          <li class="nav-item" role="presentation">
+            <button class="nav-link{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab" data-bs-toggle="tab" data-bs-target="#{{custom_property.title|lower}}-tab-pane" type="button" role="tab" aria-controls="{{custom_property.title|lower}}-tab-pane" aria-selected="{% if forloop.first %} true{% endif %}">{{ custom_property.title }}</button>
+          </li>
+  
+          {% endfor %}
+        </ul>
+  
+        
+  
+  
+        {% for custom_property in custom_property_list %}
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab-pane" role="tabpanel" aria-labelledby="{{custom_property.title|lower}}-tab" tabindex="0">
+              <div class="row">
+                {% with custom_property_data=custom_property.data %}
+                {% for item in custom_property_data.items  %}
+                <div class="col-12 col-md-6">
+                    {{ item.name }}
+                </div>
+                <div class="col-12 col-md-6">
+                  {% for file in item.files %}
+                  <a href="{{ file.file_path }}" target="_blank">{{ file.file_type }}</a>
+                  {% endfor %}
+                </div>
                 {% endfor %}
-              </div>
-              {% endfor %}
-              {% endwith %}
+                {% endwith %}
+            </div>
           </div>
         </div>
-      </div>
-      {% endfor %}
+        {% endfor %}
+    </div>
+    
 
       
 

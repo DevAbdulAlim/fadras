@@ -1,105 +1,52 @@
 {% extends 'base.html' %} {% load static %} {% load i18n %} {% block content %}
 <!-- HERO SECTION -->
-<div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      data-bs-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      data-bs-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-    type="button"
-    data-bs-target="#carouselExampleIndicators"
-    data-bs-slide-to="2"
-    aria-label="Slide 3"
-  ></button>
-  <button
-  type="button"
-  data-bs-target="#carouselExampleIndicators"
-  data-bs-slide-to="3"
-  aria-label="Slide 4"
-></button>
-  <button
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      data-bs-slide-to="4"
-      aria-label="Slide 5"
-    ></button>
-    <button
-    type="button"
-    data-bs-target="#carouselExampleIndicators"
-    data-bs-slide-to="5"
-    aria-label="Slide 6"
-  ></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'img/h1.png' %}" class="d-block w-100" alt="..." />
+  <!-- Swiper -->
+  <div class="swiper mySwiper" style="height: 450px">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">      <img src="{% static 'img/h1.png' %}" class="d-block w-100 h-100" alt="..." /></div>
+      <div class="swiper-slide">      <img src="{% static 'img/h2.png' %}" class="d-block w-100 h-100" alt="..." /></div>
+      <div class="swiper-slide">      <img src="{% static 'img/h3.png' %}" class="d-block w-100 h-100" alt="..." /></div>
+      <div class="swiper-slide">      <img src="{% static 'img/h4.png' %}" class="d-block w-100 h-100" alt="..." /></div>
+      <div class="swiper-slide">      <img src="{% static 'img/h5.png' %}" class="d-block w-100 h-100" alt="..." /></div>
+      <div class="swiper-slide">      <img src="{% static 'img/h6.png' %}" class="d-block w-100 h-100" alt="..." /></div>
     </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/h2.png' %}" class="d-block w-100" alt="..." />
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/h3.png' %}" class="d-block w-100" alt="..." />
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/h4.png' %}" class="d-block w-100" alt="..." />
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/h5.png' %}" class="d-block w-100" alt="..." />
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'img/h6.png' %}" class="d-block w-100" alt="..." />
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    <div class="autoplay-progress">
+      <svg viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="20"></circle>
+      </svg>
+      <span></span>
     </div>
   </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleIndicators"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleIndicators"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
 <!-- MAIN CONTENT -->
-<section id="categories" class="py-5">
+<section id="about" class="py-5">
   <div class="container">
-    <h2 class="text-center mb-4">All categories</h2>
+    <h5 class="text-center">Our Solutions</h5>
+    <h2 class="text-center mb-4">
+      Are Well Designed According to </h2>
+      <h2 class="text-center">International Standards of Fabrication</h2>
    <!-- Swiper -->
-   <div class="swiper mySwiper">
+   <div class="swiper categorySwiper">
     <div class="swiper-wrapper py-5">
 
 
       {% for item in category_list %}
       <div class="swiper-slide d-block">
-        <h5>{{ item.name }}</h5>
-        <img
-        src="{{ MEDIA_URL }}{{ item.image }}"
-        height="150px"
-        width="100%"
-        alt="categories"
-      />
-        <a href="">See Products</a>
+        <div class="card" data-aos="zoom-in">
+          <div class="card-img">
+            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="150px" width="100%">
+          </div>
+          <div class="card-body text-center">
+            <h6><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none">{{item.name}}</a></h6>
+            <a href="" class="btn btn-light mt-2  text-center w-100">See More</a>
+            
+            
+          </div>
+         
+        </div>
       </div>
       {% endfor %}
  
@@ -108,43 +55,38 @@
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  </div>
-</section>
 
-<!-- Solution -->
-<section id="solution">
-  <div class="container position-relative">
-    <img src="{% static 'img/about.jpeg' %}" height="700px" width="70%" alt="" />
+
+  <div class="solution">
+  <div class="position-relative">
+    <img src="{% static 'img/about.jpeg' %}" height="550px" width="70%" alt="" />
     <div class="content p-5 text-light">
       <h3>Selection Criteria for Expansian Joint Solutions</h3>
       <p>When designing the building, there are three main types of movement to consider: thermal, seismic and wind sway</p>
-      <div class="d-flex">
-        <div class="icon"><i class="bi bi-bank"></i></div>
-        <div>
-          <h5>Thermal</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+      <div class="row direction-column g-5 mt-4">
+        <div class="col-12 d-flex">
+          <div class="icon"><i class="bi bi-bank"></i></div>
+          <div>
+            <h5>Thermal</h5>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+          </div>
+        </div>
+  
+        <div class="col-12 d-flex">
+          <div class="icon"><i class="bi bi-bank"></i></div>
+          <div>
+            <h5>Thermal</h5>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+          </div>
         </div>
       </div>
-
-      <div class="d-flex">
-        <div class="icon"><i class="bi bi-bank"></i></div>
-        <div>
-          <h5>Thermal</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
-        </div>
-      </div>
-
-
-      <div class="d-flex">
-        <div class="icon"><i class="bi bi-bank"></i></div>
-        <div>
-          <h5>Thermal</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
-        </div>
-      </div>
+      
     </div>
   </div>
+  </div>
+  </div>
 </section>
+
 
 <!-- Markets -->
 

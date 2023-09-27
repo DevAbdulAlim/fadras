@@ -1,4 +1,5 @@
 ## JsonField Example
+
 ```json
 {
   "items": [
@@ -39,6 +40,4 @@
     }
   ]
 }
-
-
 ```

@@ -30,7 +30,7 @@ class HomePageView(View):
         category_list = Category.objects.annotate(
             name=name_column,
             description=description_column
-        ).values('name', 'description', 'image',)
+        ).values('id', 'name', 'description', 'image',)
         
 
         # Set ther selected language for this view
