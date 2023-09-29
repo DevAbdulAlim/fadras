@@ -179,12 +179,14 @@ footer {
 }
 footer h4 {
     color: white;
+    padding: 5px;
+    border-bottom:3px solid #1bad99;
 }
 
 footer .social-icon i{
     color: white;
-    font-size: 1.5rem;
-    margin-right:10px;
+    font-size: 2rem;
+    margin-right:15px;
 }
 footer ul li {
     list-style-type: none;

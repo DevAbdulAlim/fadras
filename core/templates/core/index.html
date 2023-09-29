@@ -24,7 +24,7 @@
 <!-- MAIN CONTENT -->
 <section id="about" class="py-5">
   <div class="container">
-    <h5 class="text-center section-title">OUR SOLUTIONS</h5>
+    <h2 class="text-center section-title">OUR SOLUTIONS</h2>
     <h2 class="text-center mb-4">
       Are Well Designed According to </h2>
       <h2 class="text-center">International Standards of Fabrication</h2>
@@ -37,7 +37,7 @@
       <div class="swiper-slide d-block" style="height:300px">
         <div class="card h-100" data-aos="zoom-in">
           <div class="card-img">
-            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="150px" width="100%">
+            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="180px" width="100%">
           </div>
           <div class="card-body text-center">
             <h4><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none">{{item.name}}</a></h4>
@@ -92,7 +92,7 @@
 
 <section id="markets" class="bg-light py-5">
   <div class="container">
-    <h2 class="text-center pb-5">Our Market Sectors</h2>
+    <h2 class="text-center pb-5 section-title">Our Market Sectors</h2>
     <div class="row g-3 justify-content-center">
       {% for item in market_list %}
       <div
@@ -112,7 +112,7 @@
 <!-- Clients -->
 <section id="clients" class="py-5">
   <div class="container">
-    <h2 class="text-center">Our Clients</h2>
+    <h2 class="text-center section-title">Our Clients</h2>
     <p class="text-center subtitle">
       We believe in not just providing a service to our clients but also forming
       a relationship based on understanding our client’s needs and then
