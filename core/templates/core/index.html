@@ -24,7 +24,7 @@
 <!-- MAIN CONTENT -->
 <section id="about" class="py-5">
   <div class="container">
-    <h5 class="text-center">Our Solutions</h5>
+    <h5 class="text-center section-title">OUR SOLUTIONS</h5>
     <h2 class="text-center mb-4">
       Are Well Designed According to </h2>
       <h2 class="text-center">International Standards of Fabrication</h2>
@@ -34,14 +34,14 @@
 
 
       {% for item in category_list %}
-      <div class="swiper-slide d-block">
-        <div class="card" data-aos="zoom-in">
+      <div class="swiper-slide d-block" style="height:300px">
+        <div class="card h-100" data-aos="zoom-in">
           <div class="card-img">
             <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="150px" width="100%">
           </div>
           <div class="card-body text-center">
-            <h6><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none">{{item.name}}</a></h6>
-            <a href="" class="btn btn-light mt-2  text-center w-100">See More</a>
+            <h4><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none">{{item.name}}</a></h4>
+            <a href="" class="btn btn-link mt-2  text-center w-100">See More</a>
             
             
           </div>
@@ -93,16 +93,14 @@
 <section id="markets" class="bg-light py-5">
   <div class="container">
     <h2 class="text-center pb-5">Our Market Sectors</h2>
-    <div class="row g-5 justify-content-center">
+    <div class="row g-3 justify-content-center">
       {% for item in market_list %}
       <div
         class="col-6 col-sm-4 col-md-3 col-lg-2 "
       >
       <div class="card d-flex flex-column justify-content-center align-items-center">
-        <span class="d-block"
-        ><i class="bi bi-buildings" style="font-size: 3rem"></i
-      ></span>
-      <h5 class="text-center py-3">Commercial Buildings</h5>
+        <img src="{{item.image.url}}" alt="" height="80px" width="80px">
+      <h5 class="text-center py-3">{{ item.title}}</h5>
       </div>
        
       </div>

@@ -65,6 +65,12 @@ body {
   }
 
 
+  .section-title {
+    color: #1bad99;
+    font-weight: bolder;
+  }
+
+
 
 
 
@@ -83,9 +89,39 @@ background-color: #1b273d;
 }
 
 
-/* Categories */
+/* about */
+#about {
+    background-color: #e0fffb;
+}
 
-  
+#about a {
+    color: #1bad99;
+}
+
+#about .swiper-slide .card {
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.solution {
+    padding: 8rem 0;
+    
+}
+.solution .content {
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    top: 10%;
+    right: 0;
+    background-color: #1bad99;
+}
+.solution .icon i {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+
+/* ---------------- Categories Page ------------------ */
+
 #categories .card {
     border: none;
 
@@ -106,45 +142,33 @@ background-color: #1b273d;
     background: #f9f9f9;
     margin-left: 15%;
     margin-right: 15%;
-    border-top: 5px solid white;
-    border-radius: 10px;
   
+}
+
+#categories .card-body a {
+    color: #1bad99;
+    text-decoration: none;
 }
 
 #categories .card:hover img {
     transform: scale(1.2);
 }
-#categories .card:hover .card-body {
-    color: green;
-    border-top: 5px solid green;
-    cursor: pointer;
 
+#categories .card:hover a {
+    text-decoration: underline;
 }
 
-
-/* solution */
-
-.solution {
-    padding: 8rem 0;
-}
-.solution .content {
-    position: absolute;
-    height: 100%;
-    width: 60%;
-    top: 10%;
-    right: 0;
-    background-color: #1bad99;
-}
-.solution .icon i {
-    font-size: 2rem;
-    margin-right: 1rem;
-}
 
 /* Clients */
 #clients .subtitle {
     max-width: 600px;
     margin: 0 auto 2rem;
 
+}
+
+/* markets */
+#markets .card{
+ height: 200px;
 }
 
 

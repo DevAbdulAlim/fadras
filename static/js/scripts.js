@@ -18,11 +18,11 @@ var swiper = new Swiper(".categorySwiper", {
       spaceBetween: 20,
     },
     768: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 30,
     },
     1024: {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 40,
     },
   },

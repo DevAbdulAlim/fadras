@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.views import View
 from product.models import Category
-from core.models import Client, Project
+from core.models import Client, Project, Markets
 from django.utils.translation import activate
 from django.db.models import F
 
@@ -37,8 +37,7 @@ class HomePageView(View):
         activate(user_language)
 
         # ? markets
-        market_list = list(range(5))
-
+        market_list = Markets.objects.all()
 
         # ? Clients
         client_list = Client.objects.all()
