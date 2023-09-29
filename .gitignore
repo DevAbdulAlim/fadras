@@ -1,1 +1,46 @@
+# Ignore virtual environment folders
+venv/
+__pycache__/
 .venv
+
+# Ignore database files
+# db.sqlite3
+
+# Ignore static files
+# staticfiles/
+
+# Ignore media files
+# media/
+
+# Ignore secret settings and local development settings
+# *.secret
+# *.local
+
+# Ignore logs and other generated files
+*.log
+*.pot
+*.pyc
+*.swp
+
+# Ignore environment files
+.env
+
+# Ignore IDE-specific files
+.vscode/
+*.pyc
+
+# Ignore configuration files that may contain sensitive information
+*.config.json
+
+# Ignore dependencies installed with pip
+# requirements.txt
+
+# Ignore local development settings
+local_settings.py
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+
+# Ignore any other project-specific files or directories
+# Add them here as needed

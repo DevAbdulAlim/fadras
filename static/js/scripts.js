@@ -6,23 +6,36 @@ AOS.init({
 
 /// Swiper
 var swiper = new Swiper(".categorySwiper", {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  freeMode: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+  },
 });
 
-
+// hero
 const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
     var swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,
       centeredSlides: true,
       autoplay: {
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false
       },
       pagination: {
