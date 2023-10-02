@@ -16,12 +16,19 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+.bg-fadras {
+    background-color: #1aad99;
+    color: white;
+}
+.text-fadras {
+    color:#1aad99;
+}
 
 .content-wrapper {
     flex: 1;
 }
 
-.active {
+.active-custom {
     background-color: #1cb9a3 !important;
     color: white !important;
 }
@@ -266,8 +273,18 @@ footer ul li a:hover {
 
 
 
+/* ========================= Product Page ================================ */
+.product .info {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
 
-/* ============================== Products Pagd ================================ */
+
+
+
+
+
+
+/* ============================== Products Page ================================ */
 .products .card {
     border: none;
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;

@@ -48,20 +48,20 @@
 
         <ul class="navbar-nav justify-content-end flex-grow-1">
           <li class="nav-item">
-            <a class="nav-link {% if current_path == '/' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link {% if current_path == '/' %}active-custom{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if current_path == '/about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+            <a class="nav-link {% if current_path == '/about' %}active-custom{% endif %}" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if current_path == '/categories' %}active{% endif %}" href="{% url 'categories' %}">Products</a>
+            <a class="nav-link {% if current_path == '/categories' %}active-custom{% endif %}" href="{% url 'categories' %}">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if current_path == '/projects' %}active{% endif %}" href="{% url 'projects' %}">Projects</a>
+            <a class="nav-link {% if current_path == '/projects' %}active-custom{% endif %}" href="{% url 'projects' %}">Projects</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link {% if current_path == '/contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+            <a class="nav-link {% if current_path == '/contact' %}active-custom{% endif %}" href="{% url 'contact' %}">Contact</a>
           </li>
         </ul>
    

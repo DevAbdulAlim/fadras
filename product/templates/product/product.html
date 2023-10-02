@@ -8,28 +8,29 @@
 
 {% block content %}
 <!-- MAIN CONTENT -->
-<section id="product" class="py-5">
+<section id="product" class="product py-5">
 <div class="container">
-    <div class="row">
+    <div class="row g-5">
         <div class="col-12 col-md-6">
-            <img src="{{product.image1.url}}" alt="" width="100%">
+            <img src="{{product.image1.url}}" alt=""  width="100%">
         </div>
         <div class="col-12 col-md-6">
-            <h1>{{product.name}}
+            <h1 class="text-fadras">{{product.name}}
             </h1>
             <p class="text-body">{{product.description}}</p>
+            <a href="{% url 'contact' %}" class="btn-custom">Contact US</a>
         </div>
     </div>
     
 
     <!-- Information -->
-    <h1>Specifications + Documents</h1>
-    <div>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <h1 class="section-title mt-5 mb-3">Specifications + Documents</h1>
+    <div class="info">
+      <ul class="nav nav-tabs bg-light" id="myTab" role="tablist">
         {% for custom_property in custom_property_list %}
   
           <li class="nav-item" role="presentation">
-            <button class="nav-link{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab" data-bs-toggle="tab" data-bs-target="#{{custom_property.title|lower}}-tab-pane" type="button" role="tab" aria-controls="{{custom_property.title|lower}}-tab-pane" aria-selected="{% if forloop.first %} true{% endif %}">{{ custom_property.title }}</button>
+            <button class="nav-link text-dark{% if forloop.first %} active {% endif %}" id="{{custom_property.title|lower}}-tab" data-bs-toggle="tab" data-bs-target="#{{custom_property.title|lower}}-tab-pane" type="button" role="tab" aria-controls="{{custom_property.title|lower}}-tab-pane" aria-selected="{% if forloop.first %} true{% endif %}">{{ custom_property.title }}</button>
           </li>
   
           {% endfor %}
@@ -41,7 +42,7 @@
         {% for custom_property in custom_property_list %}
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab-pane" role="tabpanel" aria-labelledby="{{custom_property.title|lower}}-tab" tabindex="0">
-              <div class="row">
+              <div class="row g-4 m-4 pb-5">
                 {% with custom_property_data=custom_property.data %}
                 {% for item in custom_property_data.items  %}
                 <div class="col-12 col-md-6">

@@ -5,6 +5,11 @@
 
 {% block content %}
 
+
+<section style="background-color: #1aad99; padding:100px 0;">
+    <h1 class="text-center text-light">All Products</h1>
+</section>
+
 <section id="products" class="products py-5">
     <div class="container">
         <div class="row g-5">
@@ -12,7 +17,7 @@
                 <h3>Sub Categories</h3>
                 <ul class="list-group list-group-flush flex-column">
                     {% for item in sub_category_list %}
-                    <li class="list-group-item {% if item.category_id == request.resolver_match.kwargs.category_id and item.id == request.resolver_match.kwargs.sub_category_id %}active{% endif %}">
+                    <li class="list-group-item {% if item.category_id == request.resolver_match.kwargs.category_id and item.id == request.resolver_match.kwargs.sub_category_id %}active-custom{% endif %}">
                       <a class="nav-link" aria-current="page" href="{% url 'filter_product' category_id=item.category_id sub_category_id=item.id %}">{{ item.name_en }}</a>
                     </li>
 
@@ -39,5 +44,22 @@
         
     </div>
 </section>
+
+
+<nav aria-label="..." class="py-5">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">2</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
 
 {% endblock %}
