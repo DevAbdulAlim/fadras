@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'fadras.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fadras',  # Name of the PostgreSQL database you created
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',  # Set this to the hostname where your PostgreSQL server is running
+        'PORT': '',  # Leave empty to use the default PostgreSQL port (5432)
     }
 }
 
@@ -110,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'en'
-
+DEFAULT_CHARSET = 'utf-8'
 LANGUAGES = [
     ('en', 'English'),
     ('ar', 'Arabic'),
