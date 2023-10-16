@@ -222,17 +222,23 @@ body {
 }
 
 
+/* markets */
+#markets .card {
+    height: 220px;
+}
+
+
 /* Clients */
 #clients .subtitle {
     max-width: 600px;
     margin: 0 auto 2rem;
 
 }
-
-/* markets */
-#markets .card {
-    height: 200px;
+#clients .card {
+    border: none;
+    box-shadow: none;
 }
+
 
 
 /* FOOTER */

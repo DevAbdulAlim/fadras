@@ -3,12 +3,26 @@
   <!-- Swiper -->
   <div class="swiper mySwiper" style="height: 450px">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">      <img src="{% static 'img/h1.png' %}" class="d-block w-100 h-100" alt="..." /></div>
-      <div class="swiper-slide">      <img src="{% static 'img/h2.png' %}" class="d-block w-100 h-100" alt="..." /></div>
-      <div class="swiper-slide">      <img src="{% static 'img/h3.png' %}" class="d-block w-100 h-100" alt="..." /></div>
-      <div class="swiper-slide">      <img src="{% static 'img/h4.png' %}" class="d-block w-100 h-100" alt="..." /></div>
-      <div class="swiper-slide">      <img src="{% static 'img/h5.png' %}" class="d-block w-100 h-100" alt="..." /></div>
-      <div class="swiper-slide">      <img src="{% static 'img/h6.png' %}" class="d-block w-100 h-100" alt="..." /></div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/h1.png' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="overlay"></div>
+        <div class="content">Content</div>
+      </div>
+      <!-- <div class="swiper-slide">
+        <img src="{% static 'img/h2.png' %}" class="d-block w-100 h-100" alt="..." />
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/h3.png' %}" class="d-block w-100 h-100" alt="..." />
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/h4.png' %}" class="d-block w-100 h-100" alt="..." />
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/h5.png' %}" class="d-block w-100 h-100" alt="..." />
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/h6.png' %}" class="d-block w-100 h-100" alt="..." />
+      </div> -->
     </div>
     <div class="swiper-pagination"></div>
     <div class="autoplay-progress">
@@ -35,11 +49,11 @@
       <div class="swiper-slide d-block" style="height:300px">
         <div class="card h-100" data-aos="zoom-in">
           <div class="card-img">
-            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="180px" width="100%">
+            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="200px" width="100%">
           </div>
           <div class="card-body text-center">
             <h4><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none">{{item.name}}</a></h4>
-            <a href="" class="btn btn-link mt-2  text-center w-100">See More</a>
+            <a href="" class="btn btn-link text-center w-100">See More</a>
             
             
           </div>
@@ -60,7 +74,7 @@
     <img src="{% static 'img/about.jpeg' %}" height="550px" width="70%" alt="" />
     <div class="content p-5 text-light">
       <h3>Selection Criteria for Expansian Joint Solutions</h3>
-      <p>When designing the building, there are three main types of movement to consider: thermal, seismic and wind sway</p>
+      <p>When designing the building, there are two main types of movement to consider: thermal, seismic and wind sway</p>
       <div class="row direction-column g-5 mt-4">
         <div class="col-12 d-flex">
           <div class="icon"><i class="bi bi-bank"></i></div>
@@ -91,14 +105,16 @@
 <section id="markets" class="bg-light py-5">
   <div class="container">
     <h2 class="text-center pb-5 section-title">Our Market Sectors</h2>
-    <div class="row g-3 justify-content-center">
+    <div class="row g-3 justify-content-center align-content-stretch">
       {% for item in market_list %}
       <div
         class="col-6 col-sm-4 col-md-3 col-lg-2 "
       >
       <div class="card d-flex flex-column justify-content-center align-items-center">
-        <img src="{{item.image.url}}" alt="" height="80px" width="80px">
-      <h5 class="text-center py-3">{{ item.title}}</h5>
+        <span class="m-4 d-flex justify-content-center align-items-center" style="height: 120px;">
+          <img src="{{item.image.url}}" alt="" height="fit-content" width="100%">
+        </span>
+      <h6 class="text-center">{{ item.title}}</h6>
       </div>
        
       </div>
@@ -111,22 +127,22 @@
 <section id="clients" class="py-5">
   <div class="container">
     <h2 class="text-center section-title">Our Clients</h2>
-    <p class="text-center subtitle">
+    <p class="text-center subtitle text-secondary">
       We believe in not just providing a service to our clients but also forming
       a relationship based on understanding our client’s needs and then
       developing solutions based on those needs.
     </p>
-    <div class="row g-5">
+    <div class="row g-5 justify-content-center align-items-center">
       {% for item in client_list %}
       <div
         class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center align-items-center"
       >
+      <div class="card">
         <img
           src="{{ item.image.url }}"
-          height="120"
-          width="120"
           alt="client"
         />
+      </div>
       </div>
       {% endfor %}
     </div>
