@@ -145,14 +145,18 @@ body {
 }
 
 
+
+
+
+  .swiper-pagination .swiper-pagination-bullet {
+    background: #1cb9a3; 
+  }
+
+
 .section-title {
     color: #1bad99;
     font-weight: bolder;
 }
-
-
-
-
 
 
 
