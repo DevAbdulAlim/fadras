@@ -35,6 +35,10 @@ class ProductListView(View):
     def get(self, request, category_id):
         # Get user's selected language
         user_language = request.session.get('django_language', settings.LANGUAGE_CODE)
+        
+        # access category name
+        category = get_object_or_404(Category, id=category_id)
+
 
         # Determine which columns to select based on language
         name_column = F('name_en')
@@ -55,13 +59,16 @@ class ProductListView(View):
         # Set the selected language for this view
         activate(user_language)
 
-        return render(request, 'product/products.html', {'product_list': product_list, 'sub_category_list': sub_category_list})
+        return render(request, 'product/products.html', {'product_list': product_list, 'sub_category_list': sub_category_list, 'category': category})
     
 
 class ProductFilterView(View):
     def get(self, request, category_id, sub_category_id):
          # Get user's selected language
         user_language = request.session.get('django_language', settings.LANGUAGE_CODE)
+        
+                # access category name
+        category = get_object_or_404(Category, id=category_id)
 
         # Determine which columns to select based on language
         name_column = F('name_en')
@@ -86,7 +93,8 @@ class ProductFilterView(View):
 
         return render(request, 'product/products.html', {
             'sub_category_list': sub_category_list,
-            'product_list': product_list
+            'product_list': product_list,
+            'category': category
         })
 
 

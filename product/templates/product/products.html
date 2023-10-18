@@ -6,15 +6,18 @@
 {% block content %}
 
 
-<section style="background-color: #1aad99; padding:100px 0;">
-    <h1 class="text-center text-light">All Products</h1>
-</section>
+<section class="position-relative" style="height:450px">
+    <img src="{{category.image.url}}" class="d-block w-100 h-100 position-absolute" alt="Project">
+    <div class="overlay"></div>
+    <div class="content">
+     {{category.name_en}}</div>
+  </section>
 
 <section id="products" class="products py-5">
     <div class="container">
         <div class="row g-5">
             <div class="col-12 col-md-3">
-                <h3>Sub Categories</h3>
+                <h3>{{category.name_en}}</h3>
                 <ul class="list-group list-group-flush flex-column">
                     {% for item in sub_category_list %}
                     <li class="list-group-item {% if item.category_id == request.resolver_match.kwargs.category_id and item.id == request.resolver_match.kwargs.sub_category_id %}active-custom{% endif %}">

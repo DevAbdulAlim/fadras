@@ -5,18 +5,21 @@
 {% block title %}Home | Categories{% endblock %}
 
 {% block content %}
-<section style="background-color: #1aad99; padding:100px 0;">
-    <h1 class="text-center text-light">All Products</h1>
+<section class="position-relative" style="height:450px">
+  <img src="{% static 'img/ph.jpg' %}" class="d-block w-100 h-100 position-absolute" alt="Project">
+  <div class="overlay"></div>
+  <div class="content">
+   All Products</div>
 </section>
 
-<section id="categories" class="py-5">
+<section id="categories">
     <div class="container">
         <div class="row g-4">
             {% for item in category_list %}
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card" data-aos="zoom-in">
                     <div class="card-img">
-                      <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="250px" width="100%">
+                      <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="100%" width="100%">
                     </div>
                     <div class="card-body text-center">
                       <h5><a href="{% url 'products' category_id=item.id %}">{{item.name}}</a></h5>

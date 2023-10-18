@@ -70,6 +70,30 @@ body {
 }
 
 
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #1aad99;
+    opacity: 0.3;
+}
+
+.content {
+    position: absolute;
+    color: #1b273d;
+    bottom: 20%;
+    font-size: 3rem;
+    background-color: #e1fffb;
+    padding: 0 4rem;
+    border-radius: 5px;
+    font-family: fantasy;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+
 
 
 
@@ -148,27 +172,6 @@ body {
 }
 
 
-/* Hero */
-.swiper .overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #1aad99;
-    opacity: 0.3;
-}
-
-.swiper .content {
-    position: absolute;
-    color: #1b273d;
-    bottom: 20%;
-    font-size: 3rem;
-    background-color: #e1fffb;
-    padding: 0 4rem;
-    border-radius: 5px;
-    font-family: fantasy;
-
-}
-
 /* About */
 #about {
     background-color: #e6fffc;
@@ -194,7 +197,7 @@ body {
     width: 70%;
 }
 
-.solution .content {
+.solution .solution-content {
     position: absolute;
     height: 100%;
     width: 60%;
@@ -307,7 +310,11 @@ footer ul li a:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-#about-page a {
+#about-page .card a {
+    color: #333333;
+}
+
+#about-page .card:hover a {
     color: #1bad99;
 }
 #about-page a i {
@@ -318,14 +325,22 @@ footer ul li a:hover {
 
 
 /*  Categories Page  */
+#categories {
+    padding: 5rem 0;
+}
 
 #categories .card {
     border: none;
+    position: relative;
+    height: 300px;
 
 }
 
 #categories .card-img {
+    position: absolute;
     overflow: hidden;
+    height: 100%;
+
 }
 
 #categories img {
@@ -335,12 +350,13 @@ footer ul li a:hover {
 
 
 #categories .card-body {
-    position: relative;
+    position: absolute;
     z-index: 999;
-    margin-top: -20%;
     background: #f9f9f9;
-    margin-left: 15%;
-    margin-right: 15%;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, 0);
+    width: 90%;
 
 }
 
