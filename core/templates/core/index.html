@@ -4,25 +4,49 @@
   <div class="swiper mySwiper" style="height: 450px">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="{% static 'img/h1.png' %}" class="d-block w-100 h-100" alt="..." />
+        <img src="{% static 'img/h1.jpg' %}" class="d-block w-100 h-100" alt="..." />
         <div class="overlay"></div>
-        <div class="content">Content</div>
-      </div>
-      <!-- <div class="swiper-slide">
-        <img src="{% static 'img/h2.png' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="content">
+          Expansion Joint</div>
       </div>
       <div class="swiper-slide">
-        <img src="{% static 'img/h3.png' %}" class="d-block w-100 h-100" alt="..." />
+        <img src="{% static 'img/h1.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="overlay"></div>
+        <div class="content">
+          Control Joint</div>
       </div>
       <div class="swiper-slide">
-        <img src="{% static 'img/h4.png' %}" class="d-block w-100 h-100" alt="..." />
+        <img src="{% static 'img/h2.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="overlay"></div>
+        <div class="content">
+          Bollard Post</div>
       </div>
       <div class="swiper-slide">
-        <img src="{% static 'img/h5.png' %}" class="d-block w-100 h-100" alt="..." />
+        <img src="{% static 'img/h3.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="overlay"></div>
+        <div class="content">
+          Parking Accessories</div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="{% static 'img/h4.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="overlay"></div>
+        <div class="content">
+          Parking Accessories</div>
       </div>
       <div class="swiper-slide">
-        <img src="{% static 'img/h6.png' %}" class="d-block w-100 h-100" alt="..." />
-      </div> -->
+        <img src="{% static 'img/h5.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="overlay"></div>
+        <div class="content">
+          Signage for Parking & Roads</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'img/h6.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <div class="overlay"></div>
+        <div class="content">
+          Wall Protection System</div>
+      </div>
+
     </div>
     <div class="swiper-pagination"></div>
     <div class="autoplay-progress">
@@ -37,9 +61,10 @@
 <section id="about" class="py-5">
   <div class="container">
     <h2 class="text-center section-title">OUR SOLUTIONS</h2>
-    <h2 class="text-center mb-4">
-      Are Well Designed According to </h2>
-      <h2 class="text-center">International Standards of Fabrication</h2>
+    <h4 class="text-center text-secondary  mb-4">
+     We are well designed according to<br>
+    <strong>International Standards of Fabrication</strong>
+    </h4>
    <!-- Swiper -->
    <div class="swiper categorySwiper">
     <div class="swiper-wrapper py-5">
@@ -47,15 +72,13 @@
 
       {% for item in category_list %}
       <div class="swiper-slide d-block" style="height:300px">
-        <div class="card h-100" data-aos="zoom-in">
+        <div class="card h-100" data-aos="zoom-in" data-aos-duration="1000">
           <div class="card-img">
-            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="200px" width="100%">
+            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="220px" width="100%">
           </div>
-          <div class="card-body text-center">
-            <h4><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none">{{item.name}}</a></h4>
-            <a href="{% url 'products' category_id=item.id %}" class="btn btn-link text-center w-100">See More</a>
-            
-            
+          <div class="card-body text-center d-flex justify-content-center align-items-center">
+            <h4><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none text-light">{{item.name}}</a></h4>
+
           </div>
          
         </div>
@@ -70,26 +93,26 @@
 
 
   
-  <div class="solution">
+  <div class="solution" data-aos="zoom-in" data-aos-duration="1000" >
   <div class="position-relative">
     <img src="{% static 'img/about.jpeg' %}" alt="" />
     <div class="content p-5 text-light">
-      <h3>Selection Criteria for Expansian Joint Solutions</h3>
-      <p>When designing the building, there are two main types of movement to consider: thermal, seismic and wind sway</p>
+      <h3>Selection Criteria for Expansion Joint Solutions</h3>
+      <p>When designing the building, there are two main types of movement to consider: thermal and seismic</p>
       <div class="row direction-column g-5 mt-4">
         <div class="col-12 d-flex">
-          <div class="icon"><i class="bi bi-bank"></i></div>
+          <div class="icon"><i class="bi bi-cpu"></i></div>
           <div>
-            <h5>Thermal</h5>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+            <h5>Why are thermal expansion joints necessary?</h5>
+            <p>Thermal expansion and contraction will occur in buildings – that's a given – and control joints help prevent resulting cracks and damage. Wind, temperature fluctuation, live loads,</p>
           </div>
         </div>
   
         <div class="col-12 d-flex">
-          <div class="icon"><i class="bi bi-bank"></i></div>
+          <div class="icon"><i class="bi bi-motherboard"></i></div>
           <div>
-            <h5>Thermal</h5>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit praesentium ullam nostrum cum porro totam tempore, nemo laboriosam nam illum.</p>
+            <h5>Why are seismic expansion joints necessary?</h5>
+            <p>A seismic joint typically creates a separation between the adjacent buildings or parts of buildings that includes separation of walls, floors, roof and in the case of joints within the same building, it allows large multidirectional movements of structures to avoid collisions</p>
           </div>
         </div>
       </div>
@@ -105,13 +128,13 @@
 
 <section id="markets" class="bg-light py-5">
   <div class="container">
-    <h2 class="text-center pb-5 section-title">Our Market Sectors</h2>
+    <h2 class="text-center pb-5 section-title" data-aos="zoom-in">Our Market Sectors</h2>
     <div class="row g-3 justify-content-center align-content-stretch">
       {% for item in market_list %}
       <div
         class="col-6 col-sm-4 col-md-3 col-lg-2 "
       >
-      <div class="card d-flex flex-column justify-content-center align-items-center">
+      <div class="card d-flex flex-column justify-content-center align-items-center" data-aos="zoom-in" data-aos-duration="1000">
         <span class="m-4 d-flex justify-content-center align-items-center" style="height: 120px;">
           <img src="{{item.image.url}}" alt="" height="fit-content" width="100%">
         </span>
@@ -127,8 +150,8 @@
 <!-- Clients -->
 <section id="clients" class="py-5">
   <div class="container">
-    <h2 class="text-center section-title">Our Clients</h2>
-    <p class="text-center subtitle text-secondary">
+    <h2 class="text-center section-title" data-aos="zoom-in" >Our Clients</h2>
+    <p class="text-center subtitle text-secondary" data-aos="zoom-in" >
       We believe in not just providing a service to our clients but also forming
       a relationship based on understanding our client’s needs and then
       developing solutions based on those needs.
@@ -138,7 +161,7 @@
       <div
         class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center align-items-center"
       >
-      <div class="card">
+      <div class="card" data-aos="flip-left" data-aos-duration="1000">
         <img
           src="{{ item.image.url }}"
           alt="client"
