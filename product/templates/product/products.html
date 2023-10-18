@@ -36,7 +36,8 @@
                             <img src="{{product.image1.url}}" alt="image" height="200px" width="100%">
                             <div class="card-body text-center">
                                 <h5 class="card-title mb-4">{{product.name}}</h5>
-                                <a href="{% url 'product' product_id=product.id %}" class="btn-custom">{% translate "Read More" %}</a>
+                                <a href="{% url 'product' product_id=product.id %}" class="d-block btn-custom">{% translate "Read More" %}</a>
+                               
                             </div>
                         </div>
                     </div>
