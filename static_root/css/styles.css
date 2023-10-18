@@ -128,7 +128,11 @@ body {
 
 
 
-/* ---------- Topbar------------ */
+
+
+
+
+/* Topbar */
 #topbar {
     background-color: #1b273d;
 }
@@ -143,23 +147,16 @@ body {
 }
 
 
-/* about */
-#about {
-    background-color: #e0fffb;
-}
 
-#about a {
-    color: #1bad99;
-}
-
-#about .swiper-slide .card {
-    border: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
+/* Solution */
 .solution {
     padding: 8rem 0;
 
+}
+
+.solution img {
+    height: 550px;
+    width: 70%;
 }
 
 .solution .content {
@@ -175,9 +172,99 @@ body {
     font-size: 2rem;
     margin-right: 1rem;
 }
+@media screen and (max-width: 768px){
+    .solution img {
+        height: 100%;
+        width: 100%;
+    }
+    .solution .content {
+        position: static;
+        width:100%;
+        
+
+    }
+}
 
 
-/* ---------------- Categories Page ------------------ */
+/* markets */
+#markets .card {
+    height: 220px;
+}
+
+
+/* Clients */
+#clients .subtitle {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+
+}
+#clients .card {
+    border: none;
+    box-shadow: none;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #1b273d;
+    color: #8d939e;
+}
+
+footer h4 {
+    color: white;
+    padding: 5px;
+    border-bottom: 3px solid #1bad99;
+}
+
+footer .social-icon i {
+    color: white;
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+footer ul li {
+    list-style-type: none;
+}
+
+footer ul li a {
+    color: #8d939e;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: white;
+}
+
+.copyright {
+    margin: 0;
+    background-color: #131d30;
+}
+
+
+
+
+
+
+
+
+/* =========================== PAGES =============================== */
+/* about */
+#about {
+    background-color: #e0fffb;
+}
+
+#about a {
+    color: #1bad99;
+}
+
+#about .swiper-slide .card {
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+/*  Categories Page  */
 
 #categories .card {
     border: none;
@@ -218,71 +305,15 @@ body {
 }
 
 
-/* Clients */
-#clients .subtitle {
-    max-width: 600px;
-    margin: 0 auto 2rem;
 
-}
-
-/* markets */
-#markets .card {
-    height: 200px;
-}
-
-
-/* FOOTER */
-footer {
-    background-color: #1b273d;
-    color: #8d939e;
-}
-
-footer h4 {
-    color: white;
-    padding: 5px;
-    border-bottom: 3px solid #1bad99;
-}
-
-footer .social-icon i {
-    color: white;
-    font-size: 2rem;
-    margin-right: 15px;
-}
-
-footer ul li {
-    list-style-type: none;
-}
-
-footer ul li a {
-    color: #8d939e;
-    text-decoration: none;
-}
-
-footer ul li a:hover {
-    color: white;
-}
-
-.copyright {
-    margin: 0;
-    background-color: #131d30;
-}
-
-
-
-/* ========================= Product Page ================================ */
-.product .info {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-
-
-
-
-
-
-/* ============================== Products Page ================================ */
+/* Products Page */
 .products .card {
     border: none;
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
     height: 320px;
 }
+
+.product .info {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+

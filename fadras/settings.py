@@ -61,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.i18n',
                 'fadras.context_processors.current_path',
+                'fadras.context_processors.category_list',
             ],
         },
     },

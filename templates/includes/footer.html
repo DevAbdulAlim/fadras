@@ -22,12 +22,13 @@
           QUICK ACCESS
         </h4>
           <ul style="line-height: 1.8;">
-            <li><i class="bi bi-caret-right-fill"></i></i><a href="#">Home</a></li>
-            <li><i class="bi bi-caret-right-fill"></i><a href="#">About</a></li>
-            <li><i class="bi bi-caret-right-fill"></i><a href="#">Products</a></li>
-            <li><i class="bi bi-caret-right-fill"></i><a href="#">Projects</a></li>
-            <li><i class="bi bi-caret-right-fill"></i><a href="#">Clients</a></li>
-            <li><i class="bi bi-caret-right-fill"></i><a href="#">Contact</a></li>
+            <li><i class="bi bi-caret-right-fill"></i></i><a href="{% url 'home' %}">Home</a></li>
+            <li><i class="bi bi-caret-right-fill"></i><a href="{% url 'about' %}">About</a></li>
+            <li><i class="bi bi-caret-right-fill"></i><a href="{% url 'categories' %}">Products</a></li>
+            <li><i class="bi bi-caret-right-fill"></i><a href="{% url 'projects' %}">Projects</a></li>
+            <li><i class="bi bi-caret-right-fill"></i><a href="#markets">Markets</a></li>
+            <li><i class="bi bi-caret-right-fill"></i><a href="#clients">Clients</a></li>
+            <li><i class="bi bi-caret-right-fill"></i><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </div>
 
@@ -36,16 +37,10 @@
           PRODUCTS
         </h4>
         <ul>
-          <li><a href="#">Expansion Joint Profiles</a></li>
-          <li><a href="#">Wall and Corner Guard Systems</a></li>
-          <li><a href="#">Bridge Expansion Joints and Bearings & Slab Joint</a></li>
-          <li><a href="#">Decoration & Trim Profiles</a></li>
-          <li><a href="#">Movement Joints Profiles</a></li>
-          <li><a href="#">Hydroflex Waterproofing Products</a></li>
-          <li><a href="#">Entrance Mat System</a></li>
-          <li><a href="#">PVC Waterstop</a></li>
-          <li><a href="#">Aluminium Skirtings</a></li>
-          <li><a href="#">Other Products</a></li>
+          {% for item in categories %}
+          <li><a href="{% url 'products' category_id=item.id %}">{{item.name_en}}</a></li>
+
+          {% endfor %}
       </ul>
       </div>
 
