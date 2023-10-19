@@ -2,7 +2,14 @@ asgiref==3.7.2
 Babel==2.12.1
 Django==4.2.5
 Pillow==10.0.0
+psycopg==3.1.12
+psycopg-binary==3.1.12
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
 py==1.11.0
+python-dotenv==1.0.0
 six==1.16.0
 sqlparse==0.4.4
+typing_extensions==4.8.0
 tzdata==2023.3
+wfastcgi==3.0.0
