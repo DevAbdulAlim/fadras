@@ -16,11 +16,13 @@
 <section id="products" class="products py-5">
     <div class="container">
         <div class="row g-5">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-3" data-aos="fade-right"
+            data-aos-easing="linear">
                 <h3>{{category.name_en}}</h3>
                 <ul class="list-group list-group-flush flex-column">
                     {% for item in sub_category_list %}
-                    <li class="list-group-item {% if item.category_id == request.resolver_match.kwargs.category_id and item.id == request.resolver_match.kwargs.sub_category_id %}active-custom{% endif %}">
+                    <li class="list-group-item {% if item.category_id == request.resolver_match.kwargs.category_id and item.id == request.resolver_match.kwargs.sub_category_id %}active-custom{% endif %}"  
+                    >
                       <a class="nav-link" aria-current="page" href="{% url 'filter_product' category_id=item.category_id sub_category_id=item.id %}">{{ item.name_en }}</a>
                     </li>
 
@@ -32,7 +34,7 @@
                 <div class="row g-4">
                     {% for product in product_list %}
                     <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card">
+                        <div class="card" data-aos="zoom-in" data-aos-duration="1000">
                             <img src="{{product.image1.url}}" alt="image" height="200px" width="100%">
                             <div class="card-body text-center">
                                 <h5 class="card-title mb-4">{{product.name}}</h5>
