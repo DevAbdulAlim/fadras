@@ -29,8 +29,9 @@ body {
 }
 
 .active-custom {
-    background-color: #1cb9a3 !important;
-    color: white !important;
+    /* background-color: #1cb9a3 !important;
+    color: white !important; */
+    color: #1cb9a3;
 }
 
 .btn-custom {
@@ -65,6 +66,30 @@ body {
 
     width: 100%;
     /* Expand to the right */
+
+}
+
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #1aad99;
+    opacity: 0.3;
+}
+
+.content {
+    position: absolute;
+    color: #1b273d;
+    bottom: 20%;
+    font-size: 3rem;
+    background-color: #e1fffb;
+    padding: 0 4rem;
+    border-radius: 5px;
+    font-family: fantasy;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 
 }
 
@@ -120,14 +145,18 @@ body {
 }
 
 
+
+
+
+  .swiper-pagination .swiper-pagination-bullet {
+    background: #1cb9a3; 
+  }
+
+
 .section-title {
     color: #1bad99;
     font-weight: bolder;
 }
-
-
-
-
 
 
 
@@ -147,6 +176,19 @@ body {
 }
 
 
+/* About */
+#about {
+    background-color: #f4f8ff;
+}
+#about .swiper-slide .card {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor:grab;
+}
+
+#about .card .card-body {
+    background-color: #1cb9a3;
+}
 
 /* Solution */
 .solution {
@@ -155,11 +197,11 @@ body {
 }
 
 .solution img {
-    height: 550px;
+    height: 650px;
     width: 70%;
 }
 
-.solution .content {
+.solution .solution-content {
     position: absolute;
     height: 100%;
     width: 60%;
@@ -167,12 +209,14 @@ body {
     right: 0;
     background-color: #1bad99;
 }
-
+.solution h3 {
+    font-family: fantasy;
+}
 .solution .icon i {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-right: 1rem;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .solution img {
         height: 100%;
         width: 100%;
@@ -189,6 +233,14 @@ body {
 /* markets */
 #markets .card {
     height: 220px;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+#markets .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 
@@ -201,8 +253,12 @@ body {
 #clients .card {
     border: none;
     box-shadow: none;
+    cursor: pointer;
+    transition: all 0.4s;
 }
-
+#clients .card:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
 
 /* Footer */
@@ -250,29 +306,45 @@ footer ul li a:hover {
 
 /* =========================== PAGES =============================== */
 /* about */
-#about {
-    background-color: #e0fffb;
+#about-page {
+    background-color: #f7fffe;
 }
-
-#about a {
-    color: #1bad99;
-}
-
-#about .swiper-slide .card {
+#about-page .card {
     border: none;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+#about-page .card a {
+    color: #333333;
+}
+
+#about-page .card:hover a {
+    color: #1bad99;
+}
+#about-page a i {
+    font-size: 2rem;
+}
+
+
+
 
 /*  Categories Page  */
+#categories {
+    padding: 5rem 0;
+}
 
 #categories .card {
     border: none;
+    position: relative;
+    height: 300px;
 
 }
 
 #categories .card-img {
+    position: absolute;
     overflow: hidden;
+    height: 100%;
+
 }
 
 #categories img {
@@ -282,12 +354,13 @@ footer ul li a:hover {
 
 
 #categories .card-body {
-    position: relative;
+    position: absolute;
     z-index: 999;
-    margin-top: -20%;
     background: #f9f9f9;
-    margin-left: 15%;
-    margin-right: 15%;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, 0);
+    width: 90%;
 
 }
 
