@@ -28,37 +28,42 @@
     <div class="info">
       <ul class="nav nav-tabs bg-light" id="myTab" role="tablist">
         {% for custom_property in custom_property_list %}
-  
-          <li class="nav-item" role="presentation">
-            <button class="nav-link text-dark{% if forloop.first %} active {% endif %}" id="{{custom_property.title|lower}}-tab" data-bs-toggle="tab" data-bs-target="#{{custom_property.title|lower}}-tab-pane" type="button" role="tab" aria-controls="{{custom_property.title|lower}}-tab-pane" aria-selected="{% if forloop.first %} true{% endif %}">{{ custom_property.title }}</button>
-          </li>
-  
-          {% endfor %}
+        {% with formatted_title=custom_property.title|lower|slugify %}
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-dark{% if forloop.first %} active {% endif %}" id="{{ formatted_title }}-tab" data-bs-toggle="tab" data-bs-target="#{{ formatted_title }}-tab-pane" type="button" role="tab" aria-controls="{{ formatted_title }}-tab-pane" aria-selected="{% if forloop.first %} true{% endif %}">{{ custom_property.title }}</button>
+            </li>
+        {% endwith %}
+    {% endfor %}
+    
         </ul>
   
         
   
   
         {% for custom_property in custom_property_list %}
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show{% if forloop.first %} active{% endif %}" id="{{custom_property.title|lower}}-tab-pane" role="tabpanel" aria-labelledby="{{custom_property.title|lower}}-tab" tabindex="0">
-              <div class="row g-4 m-4 pb-5">
-                {% with custom_property_data=custom_property.data %}
-                {% for item in custom_property_data.items  %}
-                <div class="col-12 col-md-6">
-                    {{ item.name }}
+        {% with formatted_title=custom_property.title|slugify|lower %}
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show{% if forloop.first %} active{% endif %}" id="{{ formatted_title }}-tab-pane" role="tabpanel" aria-labelledby="{{ formatted_title }}-tab" tabindex="0">
+                    <div class="row g-4 m-4 pb-5">
+                        {% with custom_property_data=custom_property.data %}
+                            {% for item in custom_property_data.items  %}
+                                <div class="col-12 col-md-6">
+                                    {{ item.name }}
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {% for file in item.files %}
+                                        <a href="{{ file.file_path }}" target="_blank">{{ file.file_type }}</a>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
                 </div>
-                <div class="col-12 col-md-6">
-                  {% for file in item.files %}
-                  <a href="{{ file.file_path }}" target="_blank">{{ file.file_type }}</a>
-                  {% endfor %}
-                </div>
-                {% endfor %}
-                {% endwith %}
             </div>
-          </div>
-        </div>
-        {% endfor %}
+        {% endwith %}
+    {% endfor %}
+    
+    
     </div>
     
 

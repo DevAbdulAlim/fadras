@@ -74,16 +74,17 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #1aad99;
-    opacity: 0.3;
+    /* background-color: #1aad99; */
+    /* opacity: 0.3; */
 }
 
 .content {
     position: absolute;
-    color: #1b273d;
+    color: #1d1b18;
     bottom: 20%;
-    font-size: 3rem;
-    background-color: #e1fffb;
+    font-size: 2rem;
+    text-wrap: nowrap;
+    /* background-color: #e1fffb; */
     padding: 0 4rem;
     border-radius: 5px;
     font-family: fantasy;
@@ -221,7 +222,7 @@ body {
         height: 100%;
         width: 100%;
     }
-    .solution .content {
+    .solution .solution-content {
         position: static;
         width:100%;
         
@@ -356,7 +357,7 @@ footer ul li a:hover {
 #categories .card-body {
     position: absolute;
     z-index: 999;
-    background: #f9f9f9;
+    /* background: #f9f9f9; */
     left: 50%;
     bottom: 5%;
     transform: translate(-50%, 0);

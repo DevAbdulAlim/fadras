@@ -59,6 +59,10 @@ class ProjectPageView(View):
 class ContactPageView(View):
     def get(self, request):
         return render(request, 'core/contact.html', )
+    
+
+def MisionVision(request):
+    return render(request, 'core/mision-vision.html')
 
 
 

@@ -3,15 +3,11 @@ AOS.init({
   once: true, // Set the 'once' option to true to make all animations trigger only once
 });
 
-
 /// Swiper
 var swiper = new Swiper(".categorySwiper", {
   slidesPerView: 1,
   spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+
   breakpoints: {
     576: {
       slidesPerView: 2,

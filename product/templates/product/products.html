@@ -6,10 +6,10 @@
 {% block content %}
 
 
-<section class="position-relative" style="height:450px">
-    <img src="{{category.image.url}}" class="d-block w-100 h-100 position-absolute" alt="Project">
-    <div class="overlay"></div>
-    <div class="content">
+<section class="d-flex justify-content-center align-items-center text-center" style="height:250px; background-color: #1aad99">
+    {% comment %} <img src="{{category.image.url}}" class="d-block w-100 h-100 position-absolute" alt="Project">
+    <div class="overlay"></div> {% endcomment %}
+    <div class="fs-1 text-white">
      {{category.name_en}}</div>
   </section>
 
@@ -35,10 +35,10 @@
                     {% for product in product_list %}
                     <div class="col-12 col-sm-6 col-lg-4">
                         <div class="card" data-aos="zoom-in" data-aos-duration="1000">
-                            <img src="{{product.image1.url}}" alt="image" height="200px" width="100%">
+                            <img src="{{product.image1.url}}" alt="image" height="240px" width="100%">
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-4">{{product.name}}</h5>
-                                <a href="{% url 'product' product_id=product.id %}" class="d-block btn-custom">{% translate "Read More" %}</a>
+                                {% comment %} <h5 class="card-title mb-4">{{product.name}}</h5> {% endcomment %}
+                                <a href="{% url 'product' product_id=product.id %}" class="d-block btn-custom">{{product.name}}</a>
                                
                             </div>
                         </div>

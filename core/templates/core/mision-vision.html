@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_css%}
+<link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- MAIN CONTENT -->
+<section class="py-5">
+<div class="container">
+    <h2>VISION</h2>
+    <p class="text-secondary">To be the leading specialist in indoor/outdoor 
+        expansion joint & parking solutions, offering the
+        widest range of quality products with the highest 
+        level of customer service.</p>
+
+    <hr>
+    <h2>MISSION</h2>
+    <p class="text-secondary">To offer a wide range of high-end, Building Solutions 
+        has expanded besides the growth of traffic, as well 
+        as the increasing of demands on road space has 
+        witnessed a rise in traffic management, safety, 
+        parking solution’s regulatory and enforcement 
+        equipment. And create innovative designs that add
+        beauty and style to every environment</p>
+</div>
+
+</section>
+
+
+{% endblock %}

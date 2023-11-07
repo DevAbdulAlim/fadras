@@ -10,30 +10,24 @@
           Expansion Joint</div>
       </div>
       <div class="swiper-slide">
-        <img src="{% static 'img/h1.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <img src="{% static 'img/h2.jpg' %}" class="d-block w-100 h-100" alt="..." />
         <div class="overlay"></div>
         <div class="content">
           Control Joint</div>
       </div>
       <div class="swiper-slide">
-        <img src="{% static 'img/h2.jpg' %}" class="d-block w-100 h-100" alt="..." />
+        <img src="{% static 'img/h3.jpg' %}" class="d-block w-100 h-100" alt="..." />
         <div class="overlay"></div>
         <div class="content">
           Bollard Post</div>
       </div>
-      <div class="swiper-slide">
-        <img src="{% static 'img/h3.jpg' %}" class="d-block w-100 h-100" alt="..." />
-        <div class="overlay"></div>
-        <div class="content">
-          Parking Accessories</div>
-      </div>
-
       <div class="swiper-slide">
         <img src="{% static 'img/h4.jpg' %}" class="d-block w-100 h-100" alt="..." />
         <div class="overlay"></div>
         <div class="content">
           Parking Accessories</div>
       </div>
+
       <div class="swiper-slide">
         <img src="{% static 'img/h5.jpg' %}" class="d-block w-100 h-100" alt="..." />
         <div class="overlay"></div>
@@ -49,12 +43,12 @@
 
     </div>
     <div class="swiper-pagination"></div>
-    <div class="autoplay-progress">
+  <div class="autoplay-progress">
       <svg viewBox="0 0 48 48">
         <circle cx="24" cy="24" r="20"></circle>
       </svg>
       <span></span>
-    </div>
+    </div> 
   </div>
 
 <!-- MAIN CONTENT -->
@@ -74,10 +68,10 @@
       <div class="swiper-slide d-block" style="height:300px">
         <div class="card h-100" data-aos="zoom-in" data-aos-duration="1000">
           <div class="card-img">
-            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="220px" width="100%">
+            <img  src="{{ MEDIA_URL }}{{ item.image }}" alt="" height="270px" width="100%">
           </div>
-          <div class="card-body text-center d-flex justify-content-center align-items-center">
-            <h4><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none text-light">{{item.name}}</a></h4>
+          <div class="card-body p-0 text-center d-flex justify-content-center align-items-center">
+            <h6><a href="{% url 'products' category_id=item.id %}" class="text-decoration-none text-light">{{item.name}}</a></h6>
 
           </div>
          
